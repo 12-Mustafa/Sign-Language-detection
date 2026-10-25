@@ -73,15 +73,9 @@ python app.py
 
 You can also run any script on its own, e.g. `python gesture_to_voice.py`.
 
-### Retrain the alphabet model
+### The alphabet model
 
 ```bash
 cd indian
 python train_model.py
 ```
-
-## Known issues
-
-- Login and signup use string-built SQL queries and store passwords in plain text. Fine for a local demo, not safe to deploy.
-- `TestEmotionDetector.py` refers to an undefined variable (`predicted`) in its stress check, so it crashes after the first frame.
-- `app.py` looks for the alphabet model in its own folder, but the model files are in `indian/` (and the `.meta` file is named `... - Copy.meta`). Copy or rename them so the trained weights load.
